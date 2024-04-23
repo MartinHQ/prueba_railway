@@ -10,5 +10,4 @@ public class StudentDTO {
     private String hqLastName;
     private Double hqGrade1;
     private Double hqGrade2;
-
 }
