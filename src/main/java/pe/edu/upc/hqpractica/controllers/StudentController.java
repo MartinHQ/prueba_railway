@@ -2,6 +2,7 @@ package pe.edu.upc.hqpractica.controllers;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import pe.edu.upc.hqpractica.dtos.StudentDTO;
 import pe.edu.upc.hqpractica.dtos.StudentStatusDTO;
@@ -17,6 +18,7 @@ public class StudentController {
     @Autowired
     private IStudentService sS;
 
+    @PreAuthorize("hasAuthority('ADMIN')")
     @PostMapping
     public void registerStudent(@RequestBody StudentDTO dto) {
         Student s = new Student(dto.getHqDni(),dto.getHqName(),dto.getHqLastName(),dto.getHqGrade1(),dto.getHqGrade2());
@@ -28,10 +30,14 @@ public class StudentController {
         Student s = new Student(dto.getHqDni(),dto.getHqName(),dto.getHqLastName(),dto.getHqGrade1(),dto.getHqGrade2());
         return sS.update(s);
     }
+
+    @PreAuthorize("hasAuthority('USER')")
     @GetMapping("{dni}")
     public boolean isPassed(@PathVariable("dni") Long hqDni) {
         return sS.isPassed(hqDni);
     }
+
+    @PreAuthorize("hasAuthority('ADMIN')")
     @GetMapping("/listar")
     public List<StudentStatusDTO> getStudents() {
         List<StudentStatusDTO> dto;
