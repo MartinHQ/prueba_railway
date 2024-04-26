@@ -31,7 +31,6 @@ public class StudentController {
         return sS.update(s);
     }
 
-    @PreAuthorize("hasAuthority('USER')")
     @GetMapping("{dni}")
     public boolean isPassed(@PathVariable("dni") Long hqDni) {
         return sS.isPassed(hqDni);
