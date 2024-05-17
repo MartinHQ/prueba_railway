@@ -45,6 +45,7 @@ public class Student {
     //creando funcionalidad de christian
 
     //funcionalidad Mario
+    //implementado funcionalidad de Mario
 
     //funcionalidad Joseph
 }
