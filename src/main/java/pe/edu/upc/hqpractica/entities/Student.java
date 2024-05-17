@@ -38,4 +38,8 @@ public class Student {
     //funcionalidad1 - Martin
     //aqui implementaré una funcionalidad 1
 
+    //Funcionalidad Fiorella
+
+    //funcionalidad Christian
+
 }
