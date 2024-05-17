@@ -31,4 +31,6 @@ public class Student {
         this.hqGrade2 = hqGrade2;
         this.hqFinalGrade = hqGrade1 * 0.4 + hqGrade2 * 0.6;
     }
+    //funcionalidad1 - Martin
+    //aqui implementaré una funcionalidad 1
 }
